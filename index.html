@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星辉琢艺迷你字工厂</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #0a192f; /* 深蓝色背景 */
+            color: #ffffff;
+        }
+
+        .navbar {
+            background-color: #1a237e; /* 深蓝色 */
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 999;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 1rem;
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-content a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .company-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .phone-number {
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1554269308-cd77f80abdfb?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background-color: #6c5ce7; /* 紫色按钮 */
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #8075e5;
+        }
+
+        .products {
+            padding: 4rem 2rem;
+            background-color: #0a192f;
+        }
+
+        .products h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background-color: #1a237e;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .product-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card p {
+            color: #cccccc;
+            margin-bottom: 1rem;
+        }
+
+        .about-us {
+            padding: 4rem 2rem;
+            background-color: #1a237e;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .about-image {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .about-text {
+            flex: 1;
+            padding: 2rem;
+        }
+
+        .production {
+            padding: 4rem 2rem;
+            background-color: #0a192f;
+        }
+
+        .production-image {
+            width: 100%;
+            height: auto;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .certificates {
+            padding: 4rem 2rem;
+            background-color: #1a237e;
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .certificate {
+            aspect-ratio: 1/1;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .certificate img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .contact {
+            padding: 4rem 2rem;
+            background-color: #0a192f;
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+
+        .contact-phone {
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+
+        .contact-form {
+            margin-bottom: 2rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: none;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .qr-code {
+            display: inline-block;
+            margin-left: 2rem;
+        }
+    </style>
+</head>
+<body>
+<!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo">
+            < img src="https://via.placeholder.com/50" alt="公司Logo">
+        </div>
+        <div class="nav-content">
+            首页
+            产品展示
+            公司简介
+            案例展示
+        </div>
+        <div class="company-info">
+            <span class="phone-number">电话：13888888888</span>
+        </div>
+    </nav>
+
+    <!-- 首页轮播 -->
+    <div class="hero">
+        <h1>星辉琢艺迷你字工厂</h1>
+        <p>高端定制，点亮您的品牌</p >
+        查看产品
+    </div>
+
+    <!-- 产品展示 -->
+    <div class="products">
+        <h2>我们的产品</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                < img src="https://images.unsplash.com/photo-1554269308-cd77f80abdfb?auto=format&fit=crop&w=1920&q=80" alt="产品1">
+                <h3>LED迷你发光字</h3>
+                <p>节能耐用，多种颜色可选</p >
+            </div>
+            <div class="product-card">
+                < img src="https://images.unsplash.com/photo-1554269308-cd77f80abdfb?auto=format&fit=crop&w=1920&q=80" alt="产品2">
+                <h3>霓虹迷你发光字</h3>
+                <p>经典设计，夜晚效果出众</p >
+            </div>
+            <div class="product-card">
+                < img src="https://images.unsplash.com/photo-1554269308-cd77f80abdfb?auto=format&fit=crop&w=1920&q=80" alt="产品3">
+                <h3>定制发光字</h3>
+                <p>根据需求，量身定制</p >
+            </div>
+            <div class="product-card">
+                < img src="https://images.unsplash.com/photo-1554269308-cd77f80abdfb?auto=format&fit=crop&w=1920&q=80" alt="产品4">
+                <h3>金属发光字</h3>
+                <p>高端材质，长久使用</p >
+            </div>
+            <div class="product-card">
+                < img src="https://images.unsplash.com/photo-1554269308-cd77f80abdfb?auto=format&fit=crop&w=1920&q=80" alt="产品5">
+                <h3>水晶发光字</h3>
+                <p>高透光率，视觉效果极佳</p >
+            </div>
+            <div class="product-card">
+                < img src="https://images.unsplash.com/photo-1554269308-cd77f80abdfb?auto=format&fit=crop&w=1920&q=80" alt="产品6">
+                <h3>创意发光字</h3>
+                <p>独特设计，彰显个性</p >
+            </div>
+        </div>
+    </div>
+
+    <!-- 关于我们 -->
+    <div class="about-us">
+        <h2>关于我们</h2>
+        <div class="about-content">
+            <div class="about-image">
+                < img src="https://images.unsplash.com/photo-1554269308-cd77f80abdfb?auto=format&fit=crop&w=1920&q=80" alt="公司形象">
+            </div>
+            <div class="about-text">
+                <h3>星辉琢艺迷你字工厂</h3>
+                <p>我们专注于高端迷你发光字的设计与生产，拥有丰富的行业经验和先进的生产设备。致力于为客户提供高品质的产品和优质的服务。</p >
+            </div>
+        </div>
+    </div>
+
+    <!-- 生产车间 -->
+    <div class="production">
+        <h2>生产车间</h2>
+        < img src="https://images.unsplash.com/photo-1554269308-cd77f80abdfb?auto=format&fit=crop&w=1920&q=80" alt="生产车间">
+    </div>
+
+    <!-- 生产工艺 -->
+    <div class="production">
+        <h2>生产工艺</h2>
+        < img src="https://images.unsplash.com/photo-1554269308-cd77f80abdfb?auto=format&fit=crop&w=1920&q=80" alt="生产工艺">
+    </div>
+
+    <!-- 认证证书 -->
+    <div class="certificates">
+        <h2>认证证书</h2>
+        <div class="certificates-grid">
+            <div class="certificate">
+                < img src="https://via.placeholder.com/300x300" alt="证书1">
+            </div>
+            <div class="certificate">
+                < img src="https://via.placeholder.com/300x300" alt="证书2">
+            </div>
+        </div>
+    </div>
+
+    <!-- 联系我们 -->
+    <div class="contact">
+        <h2>联系我们</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <span class="contact-phone">电话：13888888888</span>
+                < img src="https://via.placeholder.com/150x150" alt="微信二维码" class="qr-code">
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="姓名">
+                <input type="email" placeholder="邮箱地址">
+                <textarea rows="5" placeholder="留言内容"></textarea>
+                <button type="submit" class="cta-button">提交留言</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 底部版权 -->
+    <footer class="footer">
+        <p>© 2023 星辉琢艺迷你字工厂. All rights reserved.</p >
+    </footer>
+</body>
+</html>
